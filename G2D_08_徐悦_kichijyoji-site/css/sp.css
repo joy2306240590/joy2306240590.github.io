@@ -1,0 +1,547 @@
+@charset "UTF-8";
+
+@media screen and (max-width:480px) {
+  /* MENU */
+.header{
+width: 100%;
+}
+
+.header-video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;       
+  pointer-events: none;
+}
+
+.logo-color{
+  display: none;
+}
+
+.logo-color img{
+  display: none;
+}
+
+.menu-hamburger{
+height: 56px;
+width: 56px;
+position: fixed;
+top: 16px;
+right: 16px;
+background: #fff;
+border-radius: 50%;
+display: grid;
+place-items: center;
+z-index: 1000;
+cursor: pointer;
+}
+
+
+
+.menu-list{
+  text-align: center;
+  align-items: center;
+  width: 170px;
+  margin: 150px auto;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 2;                      
+
+}
+
+.menu-list a{
+  color:#2E8EA7;
+  text-decoration:none;
+  letter-spacing:.08em;
+
+  
+}
+
+.menu__line{
+  position: absolute; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background: #2C95B0;
+  transition: transform .3s, opacity .3s, top .3s, bottom .3s, background .3s;
+}
+
+.menu__line--top{
+  top: 21px;
+}
+
+.menu__line--center{
+  top: 28px;
+}
+
+.menu__line--bottom{
+  top: 35px;
+}
+
+.menu-hamburger.active .menu__line--top{
+  top: 21px; transform: translateX(-50%) rotate(45deg); background:#fff;
+}
+.menu-hamburger.active .menu__line--center{
+  opacity: 0; transform: translateX(-50%) scaleX(0);
+}
+.menu-hamburger.active .menu__line--bottom{
+  top: 21px; transform: translateX(-50%) rotate(135deg); background:#fff;
+}
+
+/* 手机端菜单的默认隐藏状态 */
+.left-content {
+  background-color: #fff; 
+  position: fixed;      
+  top: 0;
+  left: 0;             
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 999;        
+  
+  /* --- 动画核心修改 --- */
+  visibility: hidden;
+  opacity: 0;
+  
+  /* 改为向上滑动 100% 的距离，藏到屏幕外面去 */
+  transform: translateY(-100%); 
+  transition: all 0.3s ease-in-out; 
+}
+
+/* 菜单展开时的状态 */
+.left-content.open {
+  visibility: visible;
+  opacity: 1;
+  
+  /* 滑动回到原位 (0) */
+  transform: translateY(0); 
+}
+
+
+
+/* HOME-CONTENT */
+.right-content-home{
+  background-color: #2E8EA7;
+  position: fixed;      
+  left: 50%;               
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.logo-white{
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.logo-white-img{
+  width: 158px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.home-top-photo-img{
+  width: 412px;
+  height: 154px;
+  object-fit: cover;    
+  display: block;
+  margin: 16px auto 0;
+}
+
+.home-catchup-content{
+  margin: 26px 16px 68px 100px;
+  display: flex;
+  justify-content: flex-end;  
+  text-align: right; 
+}
+
+.home-catchup{
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: .04em;
+  color: #fff;
+  font-weight: 900;
+}
+
+.home-container{
+  margin-bottom: 28px;
+}
+
+.info-content{
+  margin-top: 32px;
+}
+
+.home-info-content{
+  margin-bottom: 40px;
+}
+
+.home-h2{
+  width: 389px;
+  color: #fff;
+  font-size: 16px;
+  border-bottom:1px solid #fff;
+  margin-left: 30px;
+}
+
+.home-h3{
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.home-photo{
+  object-fit: cover;    
+  display: block;
+  margin: 16px auto 0;
+}
+
+.news-list{
+  display: grid;
+  grid-template-columns: 92px max-content;
+  column-gap: 14px;
+  row-gap: 10px;
+  width: max-content; 
+  margin: 0 auto;
+}
+
+.news-date-back{
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 100;
+  display: inline-block;
+  font-size: 13px;              
+  line-height: 1.8;
+  color: #fff;
+}
+
+.news-title{
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #fff;                
+  margin: 0;
+}
+
+/* RIGHT-CONTENT ページ共通 */
+.right-content{
+  position: absolute;      
+  width: 100%;
+  height:100%;
+  background: rgba(255,255,255,.9);
+  overflow-y: auto;
+}
+
+.sns-icon-menu{
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.copyright-text{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 15px;  
+  font-weight: 200;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ABOUTページ */
+.h1{
+  color: #2C95B0;
+  font-size: 25px;
+  font-family: "Armata", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align:left;
+  margin: 65px auto 50px 40px;
+}
+
+.about-photo{
+  display: block;
+  margin: 0 auto;
+}
+
+.about-h2{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #2C95B0;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 44px auto 26px 40px;
+}
+
+.about-text{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #2C95B0;
+  font-size: 18px;
+  font-weight: 200;
+  margin: 0 auto 50px auto;
+  width: 363px;
+  line-height: 1.8;
+}
+
+/* INFOページ */
+.info-h2{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #2C95B0;
+  font-size: 18px;
+  font-weight: 200;
+  text-align:center;
+  margin-bottom: 25px;
+}
+
+.info-h2::after{
+  content:"";
+  display:block;
+  width: 47px;             
+  height: 1.5px;           
+  background:#2C95B0;
+  margin: 10px auto 0 auto;       
+}
+
+.info-photo{
+  display: block;
+  margin: 0 auto;
+}
+
+.info-h3{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 23px auto 10px auto;
+  text-align:center;
+}
+
+.info-text{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 14px;  
+  font-weight: 100;
+  width: 186px;
+  margin: 10px auto 10px auto;
+  line-height: 1.2;
+}
+
+.info-news-list{
+  display: grid;
+  grid-template-columns: 92px max-content;
+  column-gap: 14px;
+  row-gap: 10px;
+  width: max-content; 
+  margin: 0 auto 45px auto;
+}
+
+.info-news-date-back{
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 200;
+  display: inline-block;
+  font-size: 13px;              
+  line-height: 1.8;
+  color: #185E70;
+}
+
+.info-news-title{
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #185E70;                
+}
+
+/* SPOTページ */
+.spot-top-text{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 15px;  
+  font-weight: 300;
+  width: 363px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.spot-content{
+  margin: 45px auto;
+}
+
+.spot-h2{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 auto 19px 40px;     
+  position: relative;       
+  padding-left: 14px;        
+  line-height: 1.3;         
+}
+
+.spot-h2::before{
+  content: "";
+  position: absolute;
+  left: 0;                   
+  top: 50%;                   
+  transform: translateY(-50%);
+  width: 5px;                
+  height: 32px;               
+  background: #46C1E0;
+}
+
+.spot-photo{
+  display: block;
+  margin: 0 auto;
+}
+
+.spot-text{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 15px;  
+  font-weight: 500;
+  width: 363px;
+  margin: 32px auto 6px auto;
+  line-height: 1.8;
+}
+
+.spot-address{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 13px;  
+  font-weight: 400;
+  width: 363px;
+  margin: 0 auto;
+  line-height: 1.8;  
+}
+
+/* ACCESSページ */
+.access-content{
+  margin-bottom: 50px;
+}
+.access-h2{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #2C95B0;
+  font-size: 18px;
+  font-weight: 200;
+  text-align:center;
+  margin-bottom: 25px;  
+}
+
+.access-h2::after{
+  content:"";
+  display:block;
+  width: 47px;             
+  height: 2px;           
+  background:#2C95B0;
+  margin: 10px auto 0 auto;
+}
+
+.map-photo{
+  display: block;
+  margin: 35px auto;                
+  width: min(92vw, 560px);          
+  max-width: 100%;         
+  height: auto;
+}
+
+.map-text{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 14px;
+  font-weight: 200;
+  text-align:center;
+  margin: 0 auto;
+  line-height: 1.8;
+  width: 300px;
+}
+
+.map{
+  display: block;
+  margin: 42px auto 35px auto;  
+}
+
+.access-way{
+  width:max-content;
+  margin:0 auto;
+  text-align:left;
+}
+
+.map-h3{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.map-list{
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+/* CONTACTページ */
+.contact-container{
+  max-width: 520px; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-wrapper{
+  margin-bottom: 24px;
+}
+
+.form-label{
+  display: block;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #185E70;
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 25px;       
+}
+
+.data-input{
+  display: block;
+  width: 280px;           
+  margin: 0 auto;
+  padding: 10px 12px;
+  border: 1px solid rgba(24,94,112,.35);
+  border-radius: 6px;
+  background: rgba(255,255,255,.95);
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.submit-btn-wrapper{
+  margin-top: 8px;
+}
+
+.submit-btn{
+  display: inline-block;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2C95B0;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.submit-btn:hover{
+  opacity:.9; 
+}
+
+
+}
