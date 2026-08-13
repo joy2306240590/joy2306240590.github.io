@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>吉祥寺散歩|INFO</title>
+  <link href="css/reset.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/tablet.css" rel="stylesheet">
+  <link href="css/sp.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Armata&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+  <header class="header">
+  <div class="video-bg-wrapper">
+    <iframe
+      class="header-video"
+      src="https://www.youtube.com/embed/P5MhArcmKb8?autoplay=1&mute=1&loop=1&playlist=P5MhArcmKb8&controls=0&showinfo=0&modestbranding=1&playsinline=1"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+</header>
+
+  <main class="right-content">
+    <h1 class="h1">INFO of KICHIJYOJI</h1>
+
+    <div class="info-container">
+      <h2 class="info-h2">イベント情報</h2>
+      <div class="info-event-container">
+        <div class="info-content">
+          <img src="images/info-photo-1.jpg" alt="" class="info-photo">
+          <h2 class="info-h3">井の頭公園アートマーケット</h2>
+          <p class="info-text">井の頭恩賜公園で行われる青空マーケット。手づくり作品の展示販売やオリジナルパフォーマンスが楽しめます。</p>
+        </div>
+  
+        <div class="info-content">
+          <img src="images/info-photo-2.jpg" alt="" class="info-photo">
+          <h2 class="info-h3">吉祥寺ワールドビアフェス2025</h2>
+          <p class="info-text">吉祥寺駅周辺＆POLLO会場で開催。世界各国のクラフトビールと相性抜群のおつまみを味わいながら、お気に入りの一杯に出会えるフェスティバル。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-news-container">
+      <h2 class="info-h2">ニュース</h2>
+
+      <dl class="info-news-list">
+        <dt class="info-news-date">
+          <span class="info-news-date-back">2025.09.15</span>
+        </dt>
+        <dd class="info-news-article">
+          <h4 class="info-news-title">新カフェ「Green Table」オープン</h4>
+        </dd>
+  
+        <dt class="info-news-date">
+          <span class="info-news-date-back">2025.08.30</span>
+        </dt>
+        <dd class="info-news-article">
+          <h4 class="info-news-title">吉祥寺シネマリニューアル</h4>
+        </dd>
+  
+        <dt class="info-news-date">
+          <span class="info-news-date-back">2025.07.10</span>
+        </dt>
+        <dd class="info-news-article">
+          <h4 class="info-news-title">商店街に新しい古着店</h4>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="contact-container">
+      <ul class="sns-icon-menu">
+        <li>
+          <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook-img.png"
+              alt="フェイスブック"></a>
+        </li>
+        <li>
+          <a href="https://x.com/" target="_blank"><img src="images/x-img.png" alt="エックス"></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank"><img src="images/ins-img.png"
+              alt="インスタグラム"></a>
+        </li>
+      </ul>
+      <p class="copyright-text">Copyright © 2025 KICHIJYOJI  All Rights Reserved.</p>
+    </div>
+  </main>
+
+  <a class="menu-hamburger">
+    <span class="menu__line menu__line--top"></span>
+    <span class="menu__line menu__line--center"></span>
+    <span class="menu__line menu__line--bottom"></span>
+  </a>
+
+  <nav class="left-content">
+    <div class="logo-color"><img src="images/logo-color.png" alt="logo-color" class="logo-color-img"></div>
+    <ul class="menu-list">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="info.html">INFO</a></li>
+      <li><a href="spot.html">SPOT</a></li>
+      <li><a href="access.html">ACCESS</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </nav>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+jQuery(function($){
+  const $btn   = $('.menu-hamburger');      
+  const $menu  = $('.left-content');
+
+  function openMenu(){
+    $menu.addClass('open'); 
+    $btn.addClass('active'); // 汉堡变X
+  }
+
+  function closeMenu(){
+    $menu.removeClass('open'); 
+    $btn.removeClass('active'); // X变回汉堡
+  }
+
+  // 1. 点击汉堡按钮：切换菜单状态
+  $btn.on('click', function(){
+    if ($menu.hasClass('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // 2. 核心精简逻辑：点击菜单区域收回
+  $menu.on('click', function(e){
+    // 只在屏幕宽度小于 1024px（手机/平板）时生效
+    if (window.innerWidth < 1024) {
+      
+      // $(e.target) 是你手指实际点到的元素
+      // .is('.left-content') 判断是不是点到了最底下的空白背景
+      // .is('a') 判断是不是点到了菜单里的链接
+      if ($(e.target).is('.left-content') || $(e.target).is('a')) {
+        closeMenu();
+      }
+      
+    }
+  });
+
+});
+</script>
+
+</body>
+
+</html>
